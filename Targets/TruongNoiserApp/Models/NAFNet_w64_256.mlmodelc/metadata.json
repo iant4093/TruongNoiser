@@ -1,0 +1,81 @@
+[
+  {
+    "metadataOutputVersion" : "3.0",
+    "shortDescription" : "Official trained NAFNet SIDD width64, native1x 256, developed sRGB RGB.",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float16",
+        "formattedType" : "MultiArray (Float16 1 × 3 × 256 × 256)",
+        "shortDescription" : "Native1x RGB, unclamped official network output. Alpha is outside the network.",
+        "shape" : "[1, 3, 256, 256]",
+        "name" : "output_tile",
+        "type" : "MultiArray"
+      }
+    ],
+    "storagePrecision" : "Float16",
+    "modelParameters" : [
+
+    ],
+    "author" : "Megvii NAFNet authors; Core ML conversion by TruongNoiser",
+    "specificationVersion" : 9,
+    "license" : "MIT; BasicSR support Apache-2.0. See bundled NAFNet-LICENSE.txt.",
+    "mlProgramOperationTypeHistogram" : {
+      "Ios18.realDiv" : 72,
+      "Ios18.batchNorm" : 72,
+      "Ios18.sub" : 72,
+      "Ios18.mul" : 108,
+      "PixelShuffle" : 4,
+      "Split" : 72,
+      "Ios18.sqrt" : 72,
+      "Ios16.reduceMean" : 180,
+      "Ios18.conv" : 226,
+      "Ios18.add" : 149,
+      "Ios18.pow" : 72
+    },
+    "computePrecision" : "Mixed (Float16, Int32)",
+    "stateSchema" : [
+
+    ],
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "15.0",
+      "tvOS" : "18.0",
+      "visionOS" : "2.0",
+      "watchOS" : "11.0",
+      "iOS" : "18.0",
+      "macCatalyst" : "18.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_mlProgram"
+    },
+    "inputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float16",
+        "formattedType" : "MultiArray (Float16 1 × 3 × 256 × 256)",
+        "shortDescription" : "NCHW RGB gamma sRGB [0,1]. No alpha or log-P3.",
+        "shape" : "[1, 3, 256, 256]",
+        "name" : "input_tile",
+        "type" : "MultiArray"
+      }
+    ],
+    "userDefinedMetadata" : {
+      "reference" : "unmodified official FP32 NAFNet and LayerNormFunction",
+      "com.github.apple.coremltools.source_dialect" : "TorchScript",
+      "com.github.apple.coremltools.conversion_date" : "2026-10-28",
+      "computePrecision" : "fp16",
+      "inputDomain" : "gamma-sRGB-RGB-0to1",
+      "checkpointSHA256" : "cd685efaae01f7c4e9951f2deab05780079c8eb1e49ed664b72f6db04dabb445",
+      "com.github.apple.coremltools.version" : "9.0",
+      "scaleFactor" : "1",
+      "com.github.apple.coremltools.source" : "torch==2.7.0",
+      "officialCommit" : "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+      "officialRepository" : "https:\/\/github.com\/megvii-research\/NAFNet"
+    },
+    "generatedClassName" : "NAFNet_w64_256",
+    "method" : "predict"
+  }
+]

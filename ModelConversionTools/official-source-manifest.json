@@ -1,0 +1,80 @@
+{
+  "repository": "https://github.com/megvii-research/NAFNet",
+  "commit": "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+  "retrievedAt": "2026-10-28T08:18:46.108927+00:00",
+  "files": [
+    {
+      "path": "official/NAFNet/basicsr/models/archs/NAFNet_arch.py",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/basicsr/models/archs/NAFNet_arch.py",
+      "bytes": 6396,
+      "sha256": "01b22270cc93f1bb90c0e3e4490e98b023fcf73f8552860b4a9ee880ce5c6967"
+    },
+    {
+      "path": "official/NAFNet/basicsr/models/archs/arch_util.py",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/basicsr/models/archs/arch_util.py",
+      "bytes": 12046,
+      "sha256": "5a11af2e7c2d7a7b57c1fbd7e19cf0a50b4b4e8c7ae7dd203a915d7a707e7005"
+    },
+    {
+      "path": "official/NAFNet/basicsr/models/archs/local_arch.py",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/basicsr/models/archs/local_arch.py",
+      "bytes": 4399,
+      "sha256": "c4df2ba4d896442a0f6ec984accd6e68f31edce3afdf066add202c25a0d1af26"
+    },
+    {
+      "path": "official/NAFNet/basicsr/utils/logger.py",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/basicsr/utils/logger.py",
+      "bytes": 6836,
+      "sha256": "898f97841aa7a6ff56fd2c860c9884d6db7f54ab58531ab0b0e8dbaf6f7f6cc8"
+    },
+    {
+      "path": "official/NAFNet/basicsr/utils/dist_util.py",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/basicsr/utils/dist_util.py",
+      "bytes": 2998,
+      "sha256": "4ab2a9f6f379fe6271573ab841cda0aeca1bbb25e10b3fad3cc57eb6a3100a5b"
+    },
+    {
+      "path": "official/NAFNet/LICENSE",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/LICENSE",
+      "bytes": 12466,
+      "sha256": "a29ecef3456149898f08e4c71b11b33e7d333664e087bc212e84e18ddd6599ad"
+    },
+    {
+      "path": "official/NAFNet/readme.md",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/readme.md",
+      "bytes": 15556,
+      "sha256": "eb4996e27bc6a6b0706b47471749e9e8c75ccf10cd458f7f9007502057456efd"
+    },
+    {
+      "path": "official/NAFNet/docs/SIDD.md",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/docs/SIDD.md",
+      "bytes": 3547,
+      "sha256": "34949d523eca963e18e0f9e9251577d2554a997792f6908d4937d913260748a4"
+    },
+    {
+      "path": "official/NAFNet/options/test/SIDD/NAFNet-width64.yml",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/options/test/SIDD/NAFNet-width64.yml",
+      "bytes": 1405,
+      "sha256": "a85618244545c62cf8b49ba7d3f7ba32f32fdcb0a4a0047689ae78c89435e139"
+    },
+    {
+      "path": "official/NAFNet/options/train/SIDD/NAFNet-width64.yml",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/options/train/SIDD/NAFNet-width64.yml",
+      "bytes": 2181,
+      "sha256": "ffc6dd747eff87edadaeff47424532eede1b30d8c1e3a1f42ae9140787e0568f"
+    },
+    {
+      "path": "official/NAFNet/demo/noisy.png",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/demo/noisy.png",
+      "bytes": 170716,
+      "sha256": "403034182fa320130dae0d75b92e85e0850771378e674d65455c403a4958e29c"
+    },
+    {
+      "path": "official/NAFNet/demo/denoise_img.png",
+      "sourceURL": "https://raw.githubusercontent.com/megvii-research/NAFNet/2b4af71ebe098a92a75910c233a3965a3e93ede4/demo/denoise_img.png",
+      "bytes": 62630,
+      "sha256": "be1031225f65487e439105ee48aac467309b9cec46ad03c0bfd52c8374af06b9"
+    }
+  ],
+  "status": "source_pin_only; model conversion and quality NOT_RUN"
+}

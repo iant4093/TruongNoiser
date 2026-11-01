@@ -1,0 +1,1935 @@
+{
+  "model": "CGNet-SIDD",
+  "asset": "build/CompiledModelsUnshuffleFP32/CGNet_SIDD_512.mlmodelc",
+  "size": 512,
+  "inputShape": [
+    1,
+    3,
+    512,
+    512
+  ],
+  "outputShape": [
+    1,
+    3,
+    512,
+    512
+  ],
+  "tensorType": "FLOAT16",
+  "architecture": {
+    "img_channel": 3,
+    "width": 60,
+    "enc_blk_nums": [
+      2,
+      2,
+      4,
+      6
+    ],
+    "middle_blk_num": 10,
+    "dec_blk_nums": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "GCE_CONVS_nums": [
+      3,
+      3,
+      2,
+      2
+    ]
+  },
+  "compiledDirectorySHA256": "606612084acd992dbc36454d569876a3ba53d6699bf1720b12f80295e087a8d6",
+  "compiledFiles": [
+    {
+      "path": "analytics/coremldata.bin",
+      "bytes": 243,
+      "sha256": "a3608b387426bd40e3aae0036f152839366595946414877346d5695c805f50d1"
+    },
+    {
+      "path": "coremldata.bin",
+      "bytes": 1150,
+      "sha256": "16302075fe11e8b117c3421c5df75eca41f7fcc375b3e0050c6c0110646152da"
+    },
+    {
+      "path": "metadata.json",
+      "bytes": 2925,
+      "sha256": "53c9e5ac2dd9f4f7d0182ee3bc13b77bb56a062be48ddd96c19c468a1f1b83ad"
+    },
+    {
+      "path": "model.mil",
+      "bytes": 619951,
+      "sha256": "4fc3cbcca47985c4602d9c272c7e8d4798147172394b464b2eac078a861ccbde"
+    },
+    {
+      "path": "weights/weight.bin",
+      "bytes": 476826032,
+      "sha256": "b418694fe2707c674a3261e5eab36871dfebe1b01f500982d23ea8653157c345"
+    }
+  ],
+  "officialCommit": "0daa98442b928274ff50a1b5e594a2b53c94879d",
+  "checkpointSHA256": "d7daaece4350f2e3d505155d1712d22929fec06b463532e076de217996a3462d",
+  "reference": "Unmodified official FP32 CascadedGaze + LayerNormFunction, GCE GELU, nn.Upsample nearest",
+  "referenceInputs": "Identical half-rounded developed-sRGB RGB tensors",
+  "photoFixture": {
+    "source": "Pinned official NAFNet/demo/noisy.png, reused solely as a noisy-photo tensor fixture",
+    "sha256": "403034182fa320130dae0d75b92e85e0850771378e674d65455c403a4958e29c",
+    "largerShapeExtension": "Repeat original pixels without interpolation; not a SIDD benchmark score"
+  },
+  "computeRequested": "cpuAndGPU",
+  "actualANEPlacement": "NOT_MEASURED",
+  "scope": "Mac raw Core ML tensors; not a phone, SIDD score, HDR adapter or full-photo quality benchmark",
+  "ensemble": "x8",
+  "strengthsApplied": false,
+  "outputClamped": false,
+  "fidelityGate": {
+    "psnrMinDB": 50,
+    "maxAbsoluteErrorExclusive": 0.02
+  },
+  "productionRawRange": [
+    -0.25,
+    1.25
+  ],
+  "cases": [
+    {
+      "case": "black",
+      "torchSeconds": 12.6473202490306,
+      "predictionSeconds": 1.53341637502308,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.019929878413677216,
+            "maxFinite": 0.02286970429122448,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.019927978515625,
+            "maxFinite": 0.0228729248046875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.24975572162765,
+          "maxAbsoluteError": 6.861984729766846e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.019929878413677216,
+            "maxFinite": 0.02286970429122448,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.019927978515625,
+            "maxFinite": 0.0228729248046875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.24975572162765,
+          "maxAbsoluteError": 6.861984729766846e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.019929878413677216,
+            "maxFinite": 0.02286970429122448,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.019927978515625,
+            "maxFinite": 0.0228729248046875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.24975572162765,
+          "maxAbsoluteError": 6.861984729766846e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.019929878413677216,
+            "maxFinite": 0.02286970429122448,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.019927978515625,
+            "maxFinite": 0.0228729248046875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.24975572162765,
+          "maxAbsoluteError": 6.861984729766846e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.019929878413677216,
+            "maxFinite": 0.02286970429122448,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.019927978515625,
+            "maxFinite": 0.0228729248046875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.24975572162765,
+          "maxAbsoluteError": 6.861984729766846e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.019929878413677216,
+            "maxFinite": 0.02286970429122448,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.019927978515625,
+            "maxFinite": 0.0228729248046875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.24975572162765,
+          "maxAbsoluteError": 6.861984729766846e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.019929878413677216,
+            "maxFinite": 0.02286970429122448,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.019927978515625,
+            "maxFinite": 0.0228729248046875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.24975572162765,
+          "maxAbsoluteError": 6.861984729766846e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.019929878413677216,
+            "maxFinite": 0.02286970429122448,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.019927978515625,
+            "maxFinite": 0.0228729248046875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.24975572162765,
+          "maxAbsoluteError": 6.861984729766846e-06
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 129.7654645451458,
+      "maxAbsoluteError": 1.6684643924236298e-06,
+      "minPrediction": -0.006233692169189453,
+      "maxPrediction": 0.010867595672607422,
+      "meanAbsoluteChangeFromInput": 0.0024810258764773607
+    },
+    {
+      "case": "white",
+      "torchSeconds": 12.272882580960868,
+      "predictionSeconds": 1.3881413739582058,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.9900672435760498,
+            "maxFinite": 1.0029339790344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.990234375,
+            "maxFinite": 1.0029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 81.0843545168627,
+          "maxAbsoluteError": 0.0004824399948120117
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.9900672435760498,
+            "maxFinite": 1.0029339790344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.990234375,
+            "maxFinite": 1.0029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 81.0843545168627,
+          "maxAbsoluteError": 0.0004824399948120117
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.9900672435760498,
+            "maxFinite": 1.0029339790344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.990234375,
+            "maxFinite": 1.0029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 81.0843545168627,
+          "maxAbsoluteError": 0.0004824399948120117
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.9900672435760498,
+            "maxFinite": 1.0029339790344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.990234375,
+            "maxFinite": 1.0029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 81.0843545168627,
+          "maxAbsoluteError": 0.0004824399948120117
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.9900672435760498,
+            "maxFinite": 1.0029339790344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.990234375,
+            "maxFinite": 1.0029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 81.0843545168627,
+          "maxAbsoluteError": 0.0004824399948120117
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.9900672435760498,
+            "maxFinite": 1.0029339790344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.990234375,
+            "maxFinite": 1.0029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 81.0843545168627,
+          "maxAbsoluteError": 0.0004824399948120117
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.9900672435760498,
+            "maxFinite": 1.0029339790344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.990234375,
+            "maxFinite": 1.0029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 81.0843545168627,
+          "maxAbsoluteError": 0.0004824399948120117
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.9900672435760498,
+            "maxFinite": 1.0029339790344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.990234375,
+            "maxFinite": 1.0029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 81.0843545168627,
+          "maxAbsoluteError": 0.0004824399948120117
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 83.35591220760409,
+      "maxAbsoluteError": 0.00024521350860595703,
+      "minPrediction": 0.9925537109375,
+      "maxPrediction": 1.0003662109375,
+      "meanAbsoluteChangeFromInput": 0.0013086944818496704
+    },
+    {
+      "case": "near-black",
+      "torchSeconds": 12.254188167018583,
+      "predictionSeconds": 1.3841270829725545,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.014829467982053757,
+            "maxFinite": 0.019450655207037926,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.01483154296875,
+            "maxFinite": 0.0194549560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.78691953430949,
+          "maxAbsoluteError": 6.303191184997559e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.014829467982053757,
+            "maxFinite": 0.019450655207037926,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.01483154296875,
+            "maxFinite": 0.0194549560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.78691953430949,
+          "maxAbsoluteError": 6.303191184997559e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.014829467982053757,
+            "maxFinite": 0.019450655207037926,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.01483154296875,
+            "maxFinite": 0.0194549560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.78691953430949,
+          "maxAbsoluteError": 6.303191184997559e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.014829467982053757,
+            "maxFinite": 0.019450655207037926,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.01483154296875,
+            "maxFinite": 0.0194549560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.78691953430949,
+          "maxAbsoluteError": 6.303191184997559e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.014829467982053757,
+            "maxFinite": 0.019450655207037926,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.01483154296875,
+            "maxFinite": 0.0194549560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.78691953430949,
+          "maxAbsoluteError": 6.303191184997559e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.014829467982053757,
+            "maxFinite": 0.019450655207037926,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.01483154296875,
+            "maxFinite": 0.0194549560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.78691953430949,
+          "maxAbsoluteError": 6.303191184997559e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.014829467982053757,
+            "maxFinite": 0.019450655207037926,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.01483154296875,
+            "maxFinite": 0.0194549560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.78691953430949,
+          "maxAbsoluteError": 6.303191184997559e-06
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.014829467982053757,
+            "maxFinite": 0.019450655207037926,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.01483154296875,
+            "maxFinite": 0.0194549560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 121.78691953430949,
+          "maxAbsoluteError": 6.303191184997559e-06
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 130.55186904241972,
+      "maxAbsoluteError": 2.1120067685842514e-06,
+      "minPrediction": -0.00715184211730957,
+      "maxPrediction": 0.010802745819091797,
+      "meanAbsoluteChangeFromInput": 0.002565438160672784
+    },
+    {
+      "case": "gradient",
+      "torchSeconds": 12.284661165002035,
+      "predictionSeconds": 1.4015112510533072,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.007774148136377335,
+            "maxFinite": 1.0171787738800049,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.00777435302734375,
+            "maxFinite": 1.017578125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 80.65817072030919,
+          "maxAbsoluteError": 0.0004862546920776367
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.009439115412533283,
+            "maxFinite": 1.0253596305847168,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.00943756103515625,
+            "maxFinite": 1.025390625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 80.64434246045424,
+          "maxAbsoluteError": 0.0004856586456298828
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.001356187160126865,
+            "maxFinite": 1.014992356300354,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.0013561248779296875,
+            "maxFinite": 1.0146484375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 80.66406601976554,
+          "maxAbsoluteError": 0.0004868507385253906
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.011155739426612854,
+            "maxFinite": 1.0078871250152588,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.0111541748046875,
+            "maxFinite": 1.0078125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 80.65914113658513,
+          "maxAbsoluteError": 0.00048613548278808594
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.01113971322774887,
+            "maxFinite": 1.025084376335144,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.011138916015625,
+            "maxFinite": 1.025390625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 80.62298889631342,
+          "maxAbsoluteError": 0.0004863739013671875
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.012614693492650986,
+            "maxFinite": 1.0103117227554321,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.01261138916015625,
+            "maxFinite": 1.0107421875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 80.66471125199685,
+          "maxAbsoluteError": 0.0004868507385253906
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.010970857925713062,
+            "maxFinite": 1.0058636665344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.0109710693359375,
+            "maxFinite": 1.005859375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 80.65825276397032,
+          "maxAbsoluteError": 0.0004881620407104492
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.0024100267328321934,
+            "maxFinite": 1.0192385911941528,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.002410888671875,
+            "maxFinite": 1.01953125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 80.6715185924663,
+          "maxAbsoluteError": 0.00048553943634033203
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 89.70918668022566,
+      "maxAbsoluteError": 0.0002485513687133789,
+      "minPrediction": 0.009467840194702148,
+      "maxPrediction": 1.00616455078125,
+      "meanAbsoluteChangeFromInput": 0.007333098445087671
+    },
+    {
+      "case": "high-frequency-fine-grain",
+      "torchSeconds": 12.327555751049658,
+      "predictionSeconds": 1.3868627499614377,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4740326702594757,
+            "maxFinite": 0.571632444858551,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.47412109375,
+            "maxFinite": 0.57177734375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.1810185756386,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4849594831466675,
+            "maxFinite": 0.5363608598709106,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.48486328125,
+            "maxFinite": 0.5361328125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.64012805650147,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4740326702594757,
+            "maxFinite": 0.571632444858551,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.47412109375,
+            "maxFinite": 0.57177734375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.1810185756386,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4849594831466675,
+            "maxFinite": 0.5363608598709106,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.48486328125,
+            "maxFinite": 0.5361328125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.64012805650147,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4849594831466675,
+            "maxFinite": 0.5363608598709106,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.48486328125,
+            "maxFinite": 0.5361328125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.64012805650147,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4740326702594757,
+            "maxFinite": 0.571632444858551,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.47412109375,
+            "maxFinite": 0.57177734375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.1810185756386,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4849594831466675,
+            "maxFinite": 0.5363608598709106,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.48486328125,
+            "maxFinite": 0.5361328125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.64012805650147,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4740326702594757,
+            "maxFinite": 0.571632444858551,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.47412109375,
+            "maxFinite": 0.57177734375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.1810185756386,
+          "maxAbsoluteError": 0.0002442002296447754
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 84.09197570190848,
+      "maxAbsoluteError": 0.00020557641983032227,
+      "minPrediction": 0.4891357421875,
+      "maxPrediction": 0.5450439453125,
+      "meanAbsoluteChangeFromInput": 0.01922531984746456
+    },
+    {
+      "case": "bounded-photo-noise",
+      "torchSeconds": 12.381239207927138,
+      "predictionSeconds": 1.3873874999990221,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4731263518333435,
+            "maxFinite": 0.5536302924156189,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.47314453125,
+            "maxFinite": 0.5537109375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.43908033635954,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4750558137893677,
+            "maxFinite": 0.5494195818901062,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.47509765625,
+            "maxFinite": 0.54931640625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.44832488110492,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.47589853405952454,
+            "maxFinite": 0.5606901049613953,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.475830078125,
+            "maxFinite": 0.560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.45509527100977,
+          "maxAbsoluteError": 0.0002442598342895508
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4735701382160187,
+            "maxFinite": 0.5554748773574829,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.4736328125,
+            "maxFinite": 0.5556640625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.43180275485162,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.46565893292427063,
+            "maxFinite": 0.5476357340812683,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.465576171875,
+            "maxFinite": 0.5478515625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.4308308109132,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4780648946762085,
+            "maxFinite": 0.5532283782958984,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.47802734375,
+            "maxFinite": 0.55322265625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.43846140120793,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4733472168445587,
+            "maxFinite": 0.5504353046417236,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.473388671875,
+            "maxFinite": 0.55029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.4188080821763,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4699693024158478,
+            "maxFinite": 0.5565085411071777,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.469970703125,
+            "maxFinite": 0.556640625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.42652048826979,
+          "maxAbsoluteError": 0.0002442002296447754
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 86.44657156811634,
+      "maxAbsoluteError": 0.00020557641983032227,
+      "minPrediction": 0.481658935546875,
+      "maxPrediction": 0.53179931640625,
+      "meanAbsoluteChangeFromInput": 0.01948654092848301
+    },
+    {
+      "case": "fine-color-stripes",
+      "torchSeconds": 12.389095042977715,
+      "predictionSeconds": 1.3834135009674355,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4542495012283325,
+            "maxFinite": 0.5573908686637878,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.454345703125,
+            "maxFinite": 0.5576171875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.19087845804394,
+          "maxAbsoluteError": 0.00024431943893432617
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.44388726353645325,
+            "maxFinite": 0.5902872085571289,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.44384765625,
+            "maxFinite": 0.59033203125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.8577955082129,
+          "maxAbsoluteError": 0.0002442598342895508
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.45647189021110535,
+            "maxFinite": 0.6117846369743347,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.45654296875,
+            "maxFinite": 0.61181640625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 76.9559974254031,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4255925416946411,
+            "maxFinite": 0.5677364468574524,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.425537109375,
+            "maxFinite": 0.56787109375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.27104138364614,
+          "maxAbsoluteError": 0.00024706125259399414
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.45647189021110535,
+            "maxFinite": 0.6117846369743347,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.45654296875,
+            "maxFinite": 0.61181640625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 76.9559974254031,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4255925416946411,
+            "maxFinite": 0.5677364468574524,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.425537109375,
+            "maxFinite": 0.56787109375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.27104138364614,
+          "maxAbsoluteError": 0.00024706125259399414
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4542495012283325,
+            "maxFinite": 0.5573908686637878,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.454345703125,
+            "maxFinite": 0.5576171875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.19087845804394,
+          "maxAbsoluteError": 0.00024431943893432617
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.44388726353645325,
+            "maxFinite": 0.5902872085571289,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.44384765625,
+            "maxFinite": 0.59033203125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.8577955082129,
+          "maxAbsoluteError": 0.0002442598342895508
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 86.7472763782576,
+      "maxAbsoluteError": 0.0001900792121887207,
+      "minPrediction": 0.462158203125,
+      "maxPrediction": 0.55181884765625,
+      "meanAbsoluteChangeFromInput": 0.04224904254078865
+    },
+    {
+      "case": "diagonal-detail",
+      "torchSeconds": 12.47917620796943,
+      "predictionSeconds": 1.3900185000384226,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.43986451625823975,
+            "maxFinite": 0.5711266398429871,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.43994140625,
+            "maxFinite": 0.5712890625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.2642613020581,
+          "maxAbsoluteError": 0.00024443864822387695
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.44859617948532104,
+            "maxFinite": 0.5857106447219849,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.448486328125,
+            "maxFinite": 0.5859375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.10484637650819,
+          "maxAbsoluteError": 0.00024437904357910156
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4378405809402466,
+            "maxFinite": 0.5684525370597839,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.437744140625,
+            "maxFinite": 0.568359375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.26141791468112,
+          "maxAbsoluteError": 0.00024449825286865234
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.45453494787216187,
+            "maxFinite": 0.581980288028717,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.45458984375,
+            "maxFinite": 0.58203125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.09648533283371,
+          "maxAbsoluteError": 0.00024443864822387695
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.37494564056396484,
+            "maxFinite": 0.6615569591522217,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.375,
+            "maxFinite": 0.66162109375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.3781537094206,
+          "maxAbsoluteError": 0.00024449825286865234
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.45862144231796265,
+            "maxFinite": 0.6378142237663269,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.458740234375,
+            "maxFinite": 0.6376953125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.09784482750248,
+          "maxAbsoluteError": 0.00024449825286865234
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.39181235432624817,
+            "maxFinite": 0.6488092541694641,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.391845703125,
+            "maxFinite": 0.64892578125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.3725690144371,
+          "maxAbsoluteError": 0.00024449825286865234
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4586723744869232,
+            "maxFinite": 0.6422878503799438,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.458740234375,
+            "maxFinite": 0.64208984375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.10474713613213,
+          "maxAbsoluteError": 0.00024449825286865234
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 86.69854418357801,
+      "maxAbsoluteError": 0.00019741058349609375,
+      "minPrediction": 0.4693603515625,
+      "maxPrediction": 0.562744140625,
+      "meanAbsoluteChangeFromInput": 0.16785003244876862
+    },
+    {
+      "case": "high-frequency-color",
+      "torchSeconds": 12.468760000047041,
+      "predictionSeconds": 1.3844852909969632,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -107.0618667602539,
+            "maxFinite": 63.70653533935547,
+            "requiresProductionRefusal": true
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -107.0625,
+            "maxFinite": 63.71875,
+            "requiresProductionRefusal": true
+          }
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -65.8501205444336,
+            "maxFinite": 66.06055450439453,
+            "requiresProductionRefusal": true
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -65.875,
+            "maxFinite": 66.0625,
+            "requiresProductionRefusal": true
+          }
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -107.0618667602539,
+            "maxFinite": 63.70653533935547,
+            "requiresProductionRefusal": true
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -107.0625,
+            "maxFinite": 63.71875,
+            "requiresProductionRefusal": true
+          }
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -65.8501205444336,
+            "maxFinite": 66.06055450439453,
+            "requiresProductionRefusal": true
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -65.875,
+            "maxFinite": 66.0625,
+            "requiresProductionRefusal": true
+          }
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -65.8501205444336,
+            "maxFinite": 66.06055450439453,
+            "requiresProductionRefusal": true
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -65.875,
+            "maxFinite": 66.0625,
+            "requiresProductionRefusal": true
+          }
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -107.0618667602539,
+            "maxFinite": 63.70653533935547,
+            "requiresProductionRefusal": true
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -107.0625,
+            "maxFinite": 63.71875,
+            "requiresProductionRefusal": true
+          }
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -65.8501205444336,
+            "maxFinite": 66.06055450439453,
+            "requiresProductionRefusal": true
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -65.875,
+            "maxFinite": 66.0625,
+            "requiresProductionRefusal": true
+          }
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": -107.0618667602539,
+            "maxFinite": 63.70653533935547,
+            "requiresProductionRefusal": true
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -107.0625,
+            "maxFinite": 63.71875,
+            "requiresProductionRefusal": true
+          }
+        }
+      ],
+      "status": "REQUIRES_SAFE_REFUSAL",
+      "rawConvertedOutputRequiresRefusal": true
+    },
+    {
+      "case": "seeded-noise",
+      "torchSeconds": 12.329517124977428,
+      "predictionSeconds": 1.387072374986019,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4904409348964691,
+            "maxFinite": 0.7263410091400146,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.490478515625,
+            "maxFinite": 0.7265625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.01427485994793,
+          "maxAbsoluteError": 0.00024455785751342773
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4924754202365875,
+            "maxFinite": 0.7504441738128662,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.492431640625,
+            "maxFinite": 0.75048828125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.02639036517189,
+          "maxAbsoluteError": 0.0002446174621582031
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4932698905467987,
+            "maxFinite": 0.7381856441497803,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.4931640625,
+            "maxFinite": 0.73828125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.02211584020873,
+          "maxAbsoluteError": 0.0002446174621582031
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4832603335380554,
+            "maxFinite": 0.7945359349250793,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.483154296875,
+            "maxFinite": 0.79443359375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.02587509766634,
+          "maxAbsoluteError": 0.0002446174621582031
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4879220426082611,
+            "maxFinite": 0.7534072399139404,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.488037109375,
+            "maxFinite": 0.75341796875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.0098917764834,
+          "maxAbsoluteError": 0.00024455785751342773
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4900667369365692,
+            "maxFinite": 0.7455293536186218,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.489990234375,
+            "maxFinite": 0.74560546875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.0258453623815,
+          "maxAbsoluteError": 0.0002448558807373047
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.49143385887145996,
+            "maxFinite": 0.7509055137634277,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.491455078125,
+            "maxFinite": 0.7509765625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.02436812977606,
+          "maxAbsoluteError": 0.0002446770668029785
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.49047592282295227,
+            "maxFinite": 0.7433461546897888,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.490478515625,
+            "maxFinite": 0.7431640625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.0172035665493,
+          "maxAbsoluteError": 0.00024449825286865234
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 86.053235533823,
+      "maxAbsoluteError": 0.00021469593048095703,
+      "minPrediction": 0.51593017578125,
+      "maxPrediction": 0.71856689453125,
+      "meanAbsoluteChangeFromInput": 0.2580629885196686
+    },
+    {
+      "case": "official-noisy-demo",
+      "torchSeconds": 12.303725288977148,
+      "predictionSeconds": 1.3859216670389287,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.29296958446502686,
+            "maxFinite": 0.5713213086128235,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.29296875,
+            "maxFinite": 0.5712890625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.76492351672344,
+          "maxAbsoluteError": 0.00024437904357910156
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.301826149225235,
+            "maxFinite": 0.5859673023223877,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.3017578125,
+            "maxFinite": 0.5859375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.73529810651695,
+          "maxAbsoluteError": 0.0002442598342895508
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.2974843978881836,
+            "maxFinite": 0.5611298084259033,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.29736328125,
+            "maxFinite": 0.56103515625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.7648110405797,
+          "maxAbsoluteError": 0.0002442598342895508
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.30006131529808044,
+            "maxFinite": 0.5750135183334351,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.300048828125,
+            "maxFinite": 0.5751953125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.77461362875852,
+          "maxAbsoluteError": 0.00024431943893432617
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.28503963351249695,
+            "maxFinite": 0.5683820247650146,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.28515625,
+            "maxFinite": 0.568359375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.75551568876993,
+          "maxAbsoluteError": 0.0002442598342895508
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 1,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.3005715012550354,
+            "maxFinite": 0.5706531405448914,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.300537109375,
+            "maxFinite": 0.57080078125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.74793548388868,
+          "maxAbsoluteError": 0.0002442598342895508
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 2,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.28540855646133423,
+            "maxFinite": 0.5652060508728027,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.285400390625,
+            "maxFinite": 0.5654296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.75375209512539,
+          "maxAbsoluteError": 0.0002442002296447754
+        },
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 3,
+          "mirrorHorizontalBeforeRotation": true,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.2982236444950104,
+            "maxFinite": 0.5703049898147583,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.29833984375,
+            "maxFinite": 0.5703125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.73314529880709,
+          "maxAbsoluteError": 0.00024437904357910156
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 88.77477336661109,
+      "maxAbsoluteError": 0.00019848346710205078,
+      "minPrediction": 0.30792236328125,
+      "maxPrediction": 0.56640625,
+      "meanAbsoluteChangeFromInput": 0.08001753687858582
+    }
+  ],
+  "failures": [],
+  "finiteFidelityComparisons": 10,
+  "refusalObservations": 1,
+  "warmPredictionSeconds": [
+    1.3574614580138586,
+    1.35872845799895,
+    1.3588282919954509
+  ],
+  "passed": true,
+  "parameters": 119223063,
+  "modelLoadSeconds": 0.1452454999962356,
+  "orientationOrder": [
+    {
+      "quarterTurnsCCW": 0,
+      "mirrorHorizontalBeforeRotation": false
+    },
+    {
+      "quarterTurnsCCW": 1,
+      "mirrorHorizontalBeforeRotation": false
+    },
+    {
+      "quarterTurnsCCW": 2,
+      "mirrorHorizontalBeforeRotation": false
+    },
+    {
+      "quarterTurnsCCW": 3,
+      "mirrorHorizontalBeforeRotation": false
+    },
+    {
+      "quarterTurnsCCW": 0,
+      "mirrorHorizontalBeforeRotation": true
+    },
+    {
+      "quarterTurnsCCW": 1,
+      "mirrorHorizontalBeforeRotation": true
+    },
+    {
+      "quarterTurnsCCW": 2,
+      "mirrorHorizontalBeforeRotation": true
+    },
+    {
+      "quarterTurnsCCW": 3,
+      "mirrorHorizontalBeforeRotation": true
+    }
+  ],
+  "compiledAssetUnchanged": true
+}

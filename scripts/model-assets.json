@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "repository": "iant4093/TruongNoiser",
+  "releaseTag": "model-assets-v1",
+  "archives": [
+    {
+      "kind": "models",
+      "name": "Noiser-models-v1.zip",
+      "bytes": 1315313775,
+      "sha256": "5ca1e4ed6d895127c332a56905e0577fceb1ad4c381401fab39d2dbf908470a9",
+      "url": "https://github.com/iant4093/TruongNoiser/releases/download/model-assets-v1/Noiser-models-v1.zip",
+      "files": [
+        {
+          "path": "Targets/TruongNoiserApp/Models/.gitkeep",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_256.mlmodelc/analytics/coremldata.bin",
+          "bytes": 243,
+          "sha256": "8dfae5c8b60fec031d795cd4264acc59f995d0926b56c0fb43154da705e836d2"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_256.mlmodelc/coremldata.bin",
+          "bytes": 1150,
+          "sha256": "1e247d5656c54fde33027fac5379f1de38b1bab97c57c3af9039092ddc0d63af"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_256.mlmodelc/metadata.json",
+          "bytes": 2925,
+          "sha256": "33066237bce4839cdd633a88c87194484329c16559749b8e91600099268b15ce"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_256.mlmodelc/model.mil",
+          "bytes": 622173,
+          "sha256": "5f36372ef933c98efee4b36870456ea736a35383255408cb4b0b9f5139ef5018"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_256.mlmodelc/weights/weight.bin",
+          "bytes": 476822320,
+          "sha256": "9ca881f505f1f3478399917b43eb206f12b8c4d825679d0562e199cb4bf6c051"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_512.mlmodelc/analytics/coremldata.bin",
+          "bytes": 243,
+          "sha256": "a3608b387426bd40e3aae0036f152839366595946414877346d5695c805f50d1"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_512.mlmodelc/coremldata.bin",
+          "bytes": 1150,
+          "sha256": "16302075fe11e8b117c3421c5df75eca41f7fcc375b3e0050c6c0110646152da"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_512.mlmodelc/metadata.json",
+          "bytes": 2925,
+          "sha256": "53c9e5ac2dd9f4f7d0182ee3bc13b77bb56a062be48ddd96c19c468a1f1b83ad"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_512.mlmodelc/model.mil",
+          "bytes": 619951,
+          "sha256": "4fc3cbcca47985c4602d9c272c7e8d4798147172394b464b2eac078a861ccbde"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/CGNet_SIDD_512.mlmodelc/weights/weight.bin",
+          "bytes": 476826032,
+          "sha256": "b418694fe2707c674a3261e5eab36871dfebe1b01f500982d23ea8653157c345"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_256.mlmodelc/analytics/coremldata.bin",
+          "bytes": 243,
+          "sha256": "e387ea345116918636cc4ce07bc23c539d4e52ed2b68dee0e567005b58245826"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_256.mlmodelc/coremldata.bin",
+          "bytes": 1078,
+          "sha256": "99af270510033c9b3489adbe1d33ea532fa69099dd6badd686b31b88ab4e6b8e"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_256.mlmodelc/metadata.json",
+          "bytes": 2697,
+          "sha256": "230de9d11b84aa7b15f19a6cef48756f2ff0dfe0fdac84cb730a2bd37be0e366"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_256.mlmodelc/model.mil",
+          "bytes": 610440,
+          "sha256": "a4e41cb1c89e2dc7789fa04b2e1ed8c52aaff57c1c5170501edab1f0ba6a11f4"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_256.mlmodelc/weights/weight.bin",
+          "bytes": 231936128,
+          "sha256": "186e30313ac33195154355270d2fce6d936f6be35eb23649a3f7c7be070a71de"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_512.mlmodelc/analytics/coremldata.bin",
+          "bytes": 243,
+          "sha256": "c23bb52bc0551653013b3daf4007ad0905c50eefbcd305ee384970a10a53756f"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_512.mlmodelc/coremldata.bin",
+          "bytes": 1078,
+          "sha256": "26fef264b064d06f93394f072de121999b9e07773d568dc6518440e45ad1fac7"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_512.mlmodelc/metadata.json",
+          "bytes": 2697,
+          "sha256": "94fd69e3fb3d17147048aca9dd54db61d33935164321c433a4ff5baea4130256"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_512.mlmodelc/model.mil",
+          "bytes": 610808,
+          "sha256": "502fd303209f4679c8d90974fcd27606c039f5a8bbbdac644c4ec80ed3e69e53"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/NAFNet_w64_512.mlmodelc/weights/weight.bin",
+          "bytes": 231936128,
+          "sha256": "186e30313ac33195154355270d2fce6d936f6be35eb23649a3f7c7be070a71de"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Notices/CGNet-LICENSE.txt",
+          "bytes": 1085,
+          "sha256": "b62eff5d03bdbab915bbc25f673b9fb723c938ebfbc01e1c8a0e3bf82a179bda"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Notices/NAFNet-LICENSE.txt",
+          "bytes": 12466,
+          "sha256": "a29ecef3456149898f08e4c71b11b33e7d333664e087bc212e84e18ddd6599ad"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/CGNet_SIDD_256.conversion.json",
+          "bytes": 2295,
+          "sha256": "86a923d570af3a1770923bda9b74252aae90c23cb0d070be28d13d56ba6ed90b"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/CGNet_SIDD_512.conversion.json",
+          "bytes": 2295,
+          "sha256": "3e0c65bf999ee83b141d357ff44c0c2162d3dda98c811ef1c17f9eb0adaccc4d"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/NAFNet_w64_256.conversion.json",
+          "bytes": 1757,
+          "sha256": "79a4299a373d8f50c36670d087f07fa89177566473c7e8b55888c1f2b1c6ec06"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/NAFNet_w64_512.conversion.json",
+          "bytes": 1757,
+          "sha256": "9f43c7fbe3b223fb0be7ae81bc404389ba5d2f12207a6e6d28946a9faca96af1"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-checkpoint-manifest.json",
+          "bytes": 1090,
+          "sha256": "1c0f03ba5f28b7dd772f0b39b6fed49a20ec224760459d02afcb86dfdb77e7d7"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-256-all-none.json",
+          "bytes": 14177,
+          "sha256": "4a64e7f6d4763027c5afbd5b555b920c2f82748e938249fe9ebd0a9eb858e7ca"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-256-all-x8.json",
+          "bytes": 62998,
+          "sha256": "d1745e5cfc9977b4240c377ce40178d8b7b2afd5c852d8f1fd95ce9a0a480015"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-256-cpuAndGPU-none.json",
+          "bytes": 14179,
+          "sha256": "322a810a81f8e5ca5813e2be81d85b2e78095976bc594918bea543698e17cafa"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-256-cpuAndGPU-x8.json",
+          "bytes": 62994,
+          "sha256": "e46e835890ea4b3579ded62031bfa96c749cb52c77c5073b01e51e416ed44e42"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-256-cpuAndNeuralEngine-none.json",
+          "bytes": 14172,
+          "sha256": "e02322f19b33477ffadd783443fac22f3cb710d77e02558f190beb54d87891f0"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-256-cpuAndNeuralEngine-x8.json",
+          "bytes": 62998,
+          "sha256": "342d22330210db909e34f596b711ea773db433ce978c2a8ce1064b18431da70d"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-256-cpuOnly-none.json",
+          "bytes": 14169,
+          "sha256": "e24c066c06ad9f65d996a61a12bf16bd87f14bfd3c15b3fdb76ebd8024b9de2b"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-256-cpuOnly-x8.json",
+          "bytes": 62986,
+          "sha256": "8796533067b28e557c1183d04662d38264ac18c789505d70f072ba1bffe22a24"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-512-all-none.json",
+          "bytes": 14138,
+          "sha256": "b04b3aec600a8f307a99662b463def09a3a1b44ff6ccf8b541fba8664f8337c8"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-512-all-x8.json",
+          "bytes": 63021,
+          "sha256": "876336ac1d7a96697b7f03460823db7ca4b261371e730b91e30372127466ae0e"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-512-cpuAndGPU-none.json",
+          "bytes": 14149,
+          "sha256": "8404179ac343cc166799b41bc0a9a8448be02730d519d35dd0790ddcc761397e"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-512-cpuAndGPU-x8.json",
+          "bytes": 63019,
+          "sha256": "22ff69645f92f812c5226414a2dac3131006ba5d5a0c14a17d92bbd6783a6181"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-512-cpuAndNeuralEngine-none.json",
+          "bytes": 14135,
+          "sha256": "31c69f12768c81c271eb48a80b0529e0262e20ff8f5d7c2131b4331cdb83ee0d"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-512-cpuAndNeuralEngine-x8.json",
+          "bytes": 63039,
+          "sha256": "f15f98067e1853be89538dd4c395d3de9f5d3832c1fd18837e2640f7174ce409"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-512-cpuOnly-none.json",
+          "bytes": 14129,
+          "sha256": "c97e62a1745866ff9659f0fa8509e6ebd806131d65708e7324af59623714f04b"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-compiled-512-cpuOnly-x8.json",
+          "bytes": 63029,
+          "sha256": "e074b915d72ca2b0a778b7246aacfae1cac01b611ae7a14415ee93931fbc5db4"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/cgnet-official-source-manifest.json",
+          "bytes": 3664,
+          "sha256": "8770a7da5b06fafdd63a232060ce02b91047c88bdaa22e6f05540a4431e82c65"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/checkpoint-manifest.json",
+          "bytes": 1305,
+          "sha256": "1588dd7c51bce30509ed36a6f737146ef793c9ef207e92b60d5ed0e8237f7bb0"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/checkpoint-sha256.txt",
+          "bytes": 90,
+          "sha256": "32e5d933b2e0d41a4999f779a031b46fcd6a986f9dc63628ee9ef2e72f3409e2"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/model-inventory.json",
+          "bytes": 5939,
+          "sha256": "e83e4dcbbed676ca7e60a37fc1cb430f19f033d0179358e3693108858261c85a"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/nafnet-compiled-256-all.json",
+          "bytes": 3935,
+          "sha256": "13e9a5070957d6af2d6fce2fd7ef38451a5a48d84a3febadace47bce17f16393"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/nafnet-compiled-256-cpuAndGPU.json",
+          "bytes": 3944,
+          "sha256": "3e6c2cbf372d25ee6200232769987100b6231f9da5b3b9ed2aa4d6e48d9da62c"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/nafnet-compiled-256-cpuAndNeuralEngine.json",
+          "bytes": 3935,
+          "sha256": "eb768a452f87b5c71a8df6b35daf81fece01ee9e44d94489fa0d2b65b5b62f6c"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/nafnet-compiled-256-cpuOnly.json",
+          "bytes": 3930,
+          "sha256": "489d8526dfa088338fd386515deab16297531ee5c52e98491db14ad43d5e0c2c"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/nafnet-compiled-512-all.json",
+          "bytes": 3915,
+          "sha256": "c913fce5ce67cec7a98b48f13c1997aa69886f603fe8393a93246903a7db1d07"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/nafnet-compiled-512-cpuAndGPU.json",
+          "bytes": 3934,
+          "sha256": "158db838dc241113680080de8d1bb5167c028ec2b171eb00f34228e057b438f7"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/nafnet-compiled-512-cpuAndNeuralEngine.json",
+          "bytes": 3935,
+          "sha256": "9a4fccff1df6841c3f5146c1e189dbfac1715c24fdda25e15d95146b616d6b84"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/nafnet-compiled-512-cpuOnly.json",
+          "bytes": 3910,
+          "sha256": "f5e47b591a463401cad4d2e8f1406407fe22fd2cbfa86dda6b88623fc331057c"
+        },
+        {
+          "path": "Targets/TruongNoiserApp/Models/Provenance/official-source-manifest.json",
+          "bytes": 4101,
+          "sha256": "3133705f26a4afbf0dea1d96dbd272f31df2ae785828260188661116fc7ba347"
+        }
+      ]
+    },
+    {
+      "kind": "checkpoints",
+      "name": "Noiser-checkpoints-v1.zip",
+      "bytes": 873818663,
+      "sha256": "2d8b623b6cde37081bb7f2b59dc4564dca2bf588fc700af67097daec57a9287f",
+      "url": "https://github.com/iant4093/TruongNoiser/releases/download/model-assets-v1/Noiser-checkpoints-v1.zip",
+      "files": [
+        {
+          "path": "ModelConversionTools/checkpoints/CGNet-SIDD.pth",
+          "bytes": 477119009,
+          "sha256": "d7daaece4350f2e3d505155d1712d22929fec06b463532e076de217996a3462d"
+        },
+        {
+          "path": "ModelConversionTools/checkpoints/NAFNet-SIDD-width64.pth",
+          "bytes": 464154961,
+          "sha256": "cd685efaae01f7c4e9951f2deab05780079c8eb1e49ed664b72f6db04dabb445"
+        }
+      ]
+    }
+  ]
+}

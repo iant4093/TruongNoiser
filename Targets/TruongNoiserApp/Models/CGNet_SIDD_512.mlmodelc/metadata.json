@@ -1,0 +1,87 @@
+[
+  {
+    "metadataOutputVersion" : "3.0",
+    "shortDescription" : "Official trained CGNet SIDD, native1x 512, developed sRGB RGB.",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float16",
+        "formattedType" : "MultiArray (Float16 1 × 3 × 512 × 512)",
+        "shortDescription" : "Native1x RGB, unclamped official prediction; alpha is outside the network.",
+        "shape" : "[1, 3, 512, 512]",
+        "name" : "output_tile",
+        "type" : "MultiArray"
+      }
+    ],
+    "storagePrecision" : "Mixed (Float32, Int32)",
+    "modelParameters" : [
+
+    ],
+    "author" : "CascadedGaze authors; Core ML conversion by TruongNoiser",
+    "specificationVersion" : 9,
+    "license" : "MIT; derived NAFNet\/BasicSR support notices are bundled with the app.",
+    "mlProgramOperationTypeHistogram" : {
+      "PixelShuffle" : 4,
+      "Ios18.conv" : 266,
+      "Ios18.sub" : 64,
+      "Ios18.gelu" : 46,
+      "Ios18.gather" : 64,
+      "Ios18.concat" : 14,
+      "Ios18.add" : 211,
+      "Ios18.realDiv" : 64,
+      "Ios16.reduceMean" : 160,
+      "Ios16.pixelUnshuffle" : 4,
+      "Ios18.pow" : 64,
+      "Ios18.cast" : 2,
+      "Split" : 64,
+      "Ios18.sqrt" : 64,
+      "Ios18.mul" : 146
+    },
+    "computePrecision" : "Mixed (Float16, Float32, Int32, UInt32)",
+    "stateSchema" : [
+
+    ],
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "15.0",
+      "tvOS" : "18.0",
+      "visionOS" : "2.0",
+      "watchOS" : "11.0",
+      "iOS" : "18.0",
+      "macCatalyst" : "18.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_mlProgram"
+    },
+    "inputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float16",
+        "formattedType" : "MultiArray (Float16 1 × 3 × 512 × 512)",
+        "shortDescription" : "NCHW RGB gamma sRGB [0,1]. No alpha, Bayer or log-P3.",
+        "shape" : "[1, 3, 512, 512]",
+        "name" : "input_tile",
+        "type" : "MultiArray"
+      }
+    ],
+    "userDefinedMetadata" : {
+      "officialRepository" : "https:\/\/github.com\/Ascend-Research\/CascadedGaze",
+      "com.github.apple.coremltools.version" : "9.0",
+      "inputDomain" : "gamma-sRGB-RGB-0to1",
+      "downsampleLowering" : "unshuffle",
+      "computePrecision" : "fp32",
+      "com.github.apple.coremltools.conversion_date" : "2026-10-29",
+      "officialCommit" : "0daa98442b928274ff50a1b5e594a2b53c94879d",
+      "contextLowering" : "gather",
+      "checkpointSHA256" : "d7daaece4350f2e3d505155d1712d22929fec06b463532e076de217996a3462d",
+      "com.github.apple.coremltools.source_dialect" : "TorchScript",
+      "com.github.apple.coremltools.source" : "torch==2.7.0",
+      "scaleFactor" : "1",
+      "reference" : "unmodified official FP32 CascadedGaze and LayerNormFunction"
+    },
+    "generatedClassName" : "CGNet_SIDD_512",
+    "method" : "predict"
+  }
+]

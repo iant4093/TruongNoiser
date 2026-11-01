@@ -1,0 +1,115 @@
+{
+  "model": "NAFNet-SIDD-width64",
+  "asset": "build/CompiledModels/NAFNet_w64_512.mlmodelc",
+  "size": 512,
+  "officialCommit": "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+  "checkpointSHA256": "cd685efaae01f7c4e9951f2deab05780079c8eb1e49ed664b72f6db04dabb445",
+  "reference": "Unmodified official FP32 NAFNet + LayerNormFunction",
+  "computeRequested": "cpuAndNeuralEngine",
+  "actualANEPlacement": "NOT_MEASURED",
+  "scope": "Mac Core ML tensor predictions; not a phone or full-image pipeline benchmark",
+  "modelLoadSeconds": 4.7083568750094855,
+  "warmPredictionSeconds": [
+    0.15693966700928286,
+    0.15643999999156222,
+    0.15757037499861326
+  ],
+  "cases": [
+    {
+      "case": "black",
+      "psnrDB": 74.82196064180768,
+      "maxAbsoluteError": 0.0011727713281288743,
+      "torchSeconds": 1.1593422089936212,
+      "predictionSeconds": 0.16398345801280811,
+      "minPrediction": -0.0087127685546875,
+      "maxPrediction": 0.0057830810546875,
+      "meanAbsoluteChangeFromInput": 0.0019878011662513018
+    },
+    {
+      "case": "white",
+      "psnrDB": 76.43842431449444,
+      "maxAbsoluteError": 0.0009609460830688477,
+      "torchSeconds": 1.0078959169914015,
+      "predictionSeconds": 0.15487866700277664,
+      "minPrediction": 0.9931640625,
+      "maxPrediction": 1.0029296875,
+      "meanAbsoluteChangeFromInput": 0.0012892242521047592
+    },
+    {
+      "case": "near-black",
+      "psnrDB": 74.55993969645692,
+      "maxAbsoluteError": 0.0007364414632320404,
+      "torchSeconds": 1.0052565420046449,
+      "predictionSeconds": 0.1543668750091456,
+      "minPrediction": -0.0084686279296875,
+      "maxPrediction": 0.0057220458984375,
+      "meanAbsoluteChangeFromInput": 0.002106062136590481
+    },
+    {
+      "case": "gradient",
+      "psnrDB": 73.255295691732,
+      "maxAbsoluteError": 0.0017120689153671265,
+      "torchSeconds": 1.0008102499996312,
+      "predictionSeconds": 0.15484833299706224,
+      "minPrediction": -0.0301666259765625,
+      "maxPrediction": 1.0185546875,
+      "meanAbsoluteChangeFromInput": 0.008444583974778652
+    },
+    {
+      "case": "high-frequency-fine-grain",
+      "psnrDB": 74.93785120321989,
+      "maxAbsoluteError": 0.0011370182037353516,
+      "torchSeconds": 1.008235125002102,
+      "predictionSeconds": 0.1543910830077948,
+      "minPrediction": 0.487548828125,
+      "maxPrediction": 0.53466796875,
+      "meanAbsoluteChangeFromInput": 0.01982884109020233
+    },
+    {
+      "case": "bounded-photo-noise",
+      "psnrDB": 73.36741744973554,
+      "maxAbsoluteError": 0.001023709774017334,
+      "torchSeconds": 1.0023792919964762,
+      "predictionSeconds": 0.1549422499956563,
+      "minPrediction": 0.46533203125,
+      "maxPrediction": 0.59326171875,
+      "meanAbsoluteChangeFromInput": 0.01983725279569626
+    },
+    {
+      "case": "high-frequency-color",
+      "referenceFinite": true,
+      "predictionFinite": true,
+      "referenceMin": -1367.1009521484375,
+      "referenceMax": 1122.2921142578125,
+      "predictionSeconds": 0.15412666599149816,
+      "status": "REQUIRES_SAFE_REFUSAL",
+      "rawConvertedOutputRequiresRefusal": true
+    },
+    {
+      "case": "seeded-noise",
+      "referenceFinite": true,
+      "predictionFinite": true,
+      "referenceMin": -678.337890625,
+      "referenceMax": 619.989501953125,
+      "predictionSeconds": 0.15484275000926573,
+      "status": "REQUIRES_SAFE_REFUSAL",
+      "rawConvertedOutputRequiresRefusal": true
+    },
+    {
+      "case": "official-noisy-demo",
+      "psnrDB": 73.19860792227499,
+      "maxAbsoluteError": 0.0011789202690124512,
+      "torchSeconds": 1.0062903329962865,
+      "predictionSeconds": 0.15490533401316497,
+      "minPrediction": 0.28466796875,
+      "maxPrediction": 0.5693359375,
+      "meanAbsoluteChangeFromInput": 0.08048650622367859
+    }
+  ],
+  "fidelityGate": {
+    "psnrMinDB": 50,
+    "maxAbsoluteErrorExclusive": 0.02
+  },
+  "failures": [],
+  "passed": true
+}

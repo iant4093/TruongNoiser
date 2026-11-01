@@ -1,0 +1,72 @@
+{
+  "model": "NAFNet-SIDD-width64",
+  "variant": "NAFNet_w64_256",
+  "tileSize": 256,
+  "scaleFactor": 1,
+  "inputName": "input_tile",
+  "outputName": "output_tile",
+  "inputShape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "outputShape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "inputDomain": "gamma-sRGB-RGB-0to1",
+  "outputClamped": false,
+  "tensorType": "FLOAT16",
+  "computePrecision": "fp16",
+  "architecture": {
+    "img_channel": 3,
+    "width": 64,
+    "enc_blk_nums": [
+      2,
+      2,
+      4,
+      8
+    ],
+    "middle_blk_num": 12,
+    "dec_blk_nums": [
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "parameters": 115982915,
+  "officialCommit": "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+  "checkpointSHA256": "cd685efaae01f7c4e9951f2deab05780079c8eb1e49ed664b72f6db04dabb445",
+  "conversionOnlyLayerNormLoweringCount": 72,
+  "fixedShapeZeroPaddingAndFullCropElided": true,
+  "traceSeconds": 1.1541832499933662,
+  "conversionSeconds": 6.833826125002815,
+  "versions": {
+    "python": "3.12.12 (main, Oct  9 2025, 11:07:00) [Clang 17.0.0 (clang-1700.6.3.2)]",
+    "torch": "2.7.0",
+    "numpy": "2.5.4",
+    "coremltools": "9.0"
+  },
+  "files": [
+    {
+      "path": "Data/com.apple.CoreML/model.mlmodel",
+      "bytes": 585331,
+      "sha256": "7198f5a3c75b3509315a57b75d7bddee4aa5412be3cf36b8b8525d97b64abb98"
+    },
+    {
+      "path": "Data/com.apple.CoreML/weights/weight.bin",
+      "bytes": 231936128,
+      "sha256": "186e30313ac33195154355270d2fce6d936f6be35eb23649a3f7c7be070a71de"
+    },
+    {
+      "path": "Manifest.json",
+      "bytes": 617,
+      "sha256": "8b614eb6cec522e72939dbab5dc6be8970571de41bfc35c54b0a9d470349c669"
+    }
+  ],
+  "validation": "PENDING independent official-reference parity and runtime measurement"
+}

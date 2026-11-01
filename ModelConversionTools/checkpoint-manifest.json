@@ -1,0 +1,21 @@
+{
+  "model": "NAFNet-SIDD-width64",
+  "officialRepository": "https://github.com/megvii-research/NAFNet",
+  "officialReferenceCommit": "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+  "officialListing": "https://github.com/megvii-research/NAFNet/blob/2b4af71ebe098a92a75910c233a3965a3e93ede4/docs/SIDD.md",
+  "sourceURL": "https://drive.google.com/file/d/14Fht1QQJ2gMlk4N1ERCRuElg8JfjrWWR/view?usp=sharing",
+  "downloadURL": "https://drive.usercontent.google.com/download?id=14Fht1QQJ2gMlk4N1ERCRuElg8JfjrWWR&export=download&confirm=t",
+  "retrievedAt": "2026-10-28T08:19:47.139370+00:00",
+  "path": "checkpoints/NAFNet-SIDD-width64.pth",
+  "bytes": 464154961,
+  "sha256": "cd685efaae01f7c4e9951f2deab05780079c8eb1e49ed664b72f6db04dabb445",
+  "retrievalValidation": "Download/header/hash only. Strict trained load/reference/conversion/quality NOT_RUN.",
+  "validation": {
+    "strictOfficialTrainedLoad": "PASS",
+    "officialFP32VersusCompiledCoreML": "PASS for256/512 andall4compute requests on validated photo-domain cases",
+    "extremeOffDistributionCases": "Explicit refusal required; official reference also outsidevalidatedoutputrange",
+    "reports": "Models/Provenance/nafnet-compiled-{size}-{policy}.json",
+    "phoneSpeedAndQuality": "NOT_MEASURED",
+    "actualANEPlacement": "NOT_MEASURED"
+  }
+}

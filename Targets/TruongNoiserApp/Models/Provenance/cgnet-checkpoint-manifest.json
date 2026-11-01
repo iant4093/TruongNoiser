@@ -1,0 +1,16 @@
+{
+  "model": "CGNet-SIDD",
+  "officialRepository": "https://github.com/Ascend-Research/CascadedGaze",
+  "officialReferenceCommit": "0daa98442b928274ff50a1b5e594a2b53c94879d",
+  "officialListing": "https://github.com/Ascend-Research/CascadedGaze/blob/0daa98442b928274ff50a1b5e594a2b53c94879d/README.md",
+  "sourceURL": "https://drive.google.com/file/d/1Exf8LeYOjGnCLOvrA06P6UocFFmsunpQ/view?usp=sharing",
+  "downloadURL": "https://drive.usercontent.google.com/download?id=1Exf8LeYOjGnCLOvrA06P6UocFFmsunpQ&export=download&confirm=t",
+  "retrievedAt": "2026-10-29T04:54:25.529416+00:00",
+  "path": "checkpoints/CGNet-SIDD.pth",
+  "bytes": 477119009,
+  "sha256": "d7daaece4350f2e3d505155d1712d22929fec06b463532e076de217996a3462d",
+  "responseContentType": "application/octet-stream",
+  "responseContentDisposition": "attachment; filename=\"net_g_280000.pth\"",
+  "retrievalValidation": "Download ZIP/header/hash only; strict trained load, reference predictions, conversion, quality and phone runtime NOT_RUN.",
+  "trainedDomain": "SIDD developed sRGB RGB, native1x; not RAW Bayer or log-P3"
+}

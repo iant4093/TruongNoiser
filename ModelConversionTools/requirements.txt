@@ -1,0 +1,5 @@
+# Python3.12; validated conversion environment. Runtime app has no Python dependency.
+torch==2.7.0
+coremltools==9.0
+numpy==2.5.4
+Pillow==13.0.0

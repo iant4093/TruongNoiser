@@ -1,0 +1,89 @@
+{
+  "model": "CGNet-SIDD",
+  "variant": "CGNet_SIDD_512",
+  "tileSize": 512,
+  "scaleFactor": 1,
+  "inputName": "input_tile",
+  "outputName": "output_tile",
+  "inputShape": [
+    1,
+    3,
+    512,
+    512
+  ],
+  "outputShape": [
+    1,
+    3,
+    512,
+    512
+  ],
+  "inputDomain": "gamma-sRGB-RGB-0to1",
+  "outputClamped": false,
+  "tensorType": "FLOAT16",
+  "computePrecision": "fp32",
+  "architecture": {
+    "img_channel": 3,
+    "width": 60,
+    "enc_blk_nums": [
+      2,
+      2,
+      4,
+      6
+    ],
+    "middle_blk_num": 10,
+    "dec_blk_nums": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "GCE_CONVS_nums": [
+      3,
+      3,
+      2,
+      2
+    ]
+  },
+  "parameters": 119223063,
+  "officialCommit": "0daa98442b928274ff50a1b5e594a2b53c94879d",
+  "checkpointSHA256": "d7daaece4350f2e3d505155d1712d22929fec06b463532e076de217996a3462d",
+  "conversionOnlyLayerNormLoweringCount": 64,
+  "disabledOptimizationPasses": [
+    "common::fuse_elementwise_to_batchnorm"
+  ],
+  "syntheticBatchNormCount": 0,
+  "conversionOnlyExactNearestContextLoweringCount": 14,
+  "downsampleLowering": "unshuffle",
+  "conversionOnlyDownsampleLoweringCount": 4,
+  "contextLowering": "gather",
+  "nearestInterpolationSourceIndex": "floor(destinationIndex*sourceSize/targetSize)",
+  "fixedShapeZeroPaddingAndFullCropElided": true,
+  "officialGELURetained": true,
+  "globalPoolingAndStridedContextRemainTileDependent": true,
+  "traceSeconds": 2.8439737500157207,
+  "conversionSeconds": 4.900642583990702,
+  "versions": {
+    "python": "3.12.12 (main, Oct  9 2025, 11:07:00) [Clang 17.0.0 (clang-1700.6.3.2)]",
+    "torch": "2.7.0",
+    "numpy": "2.5.4",
+    "coremltools": "9.0"
+  },
+  "files": [
+    {
+      "path": "Data/com.apple.CoreML/model.mlmodel",
+      "bytes": 597898,
+      "sha256": "3246eb78c7ffebecf3d3b5da0c4afe87f5190c5340c278fd673d5e32d7a3f195"
+    },
+    {
+      "path": "Data/com.apple.CoreML/weights/weight.bin",
+      "bytes": 476826032,
+      "sha256": "b418694fe2707c674a3261e5eab36871dfebe1b01f500982d23ea8653157c345"
+    },
+    {
+      "path": "Manifest.json",
+      "bytes": 617,
+      "sha256": "b1555c642ce7dc5a0d340b39bcac9857ab01b321151b3adefe07545ff28ee31d"
+    }
+  ],
+  "validation": "PENDING independent official-reference parity, tiled seams, runtime and quality checks"
+}

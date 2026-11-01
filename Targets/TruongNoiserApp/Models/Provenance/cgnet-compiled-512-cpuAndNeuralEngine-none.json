@@ -1,0 +1,458 @@
+{
+  "model": "CGNet-SIDD",
+  "asset": "build/CompiledModelsUnshuffleFP32/CGNet_SIDD_512.mlmodelc",
+  "size": 512,
+  "inputShape": [
+    1,
+    3,
+    512,
+    512
+  ],
+  "outputShape": [
+    1,
+    3,
+    512,
+    512
+  ],
+  "tensorType": "FLOAT16",
+  "architecture": {
+    "img_channel": 3,
+    "width": 60,
+    "enc_blk_nums": [
+      2,
+      2,
+      4,
+      6
+    ],
+    "middle_blk_num": 10,
+    "dec_blk_nums": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "GCE_CONVS_nums": [
+      3,
+      3,
+      2,
+      2
+    ]
+  },
+  "compiledDirectorySHA256": "606612084acd992dbc36454d569876a3ba53d6699bf1720b12f80295e087a8d6",
+  "compiledFiles": [
+    {
+      "path": "analytics/coremldata.bin",
+      "bytes": 243,
+      "sha256": "a3608b387426bd40e3aae0036f152839366595946414877346d5695c805f50d1"
+    },
+    {
+      "path": "coremldata.bin",
+      "bytes": 1150,
+      "sha256": "16302075fe11e8b117c3421c5df75eca41f7fcc375b3e0050c6c0110646152da"
+    },
+    {
+      "path": "metadata.json",
+      "bytes": 2925,
+      "sha256": "53c9e5ac2dd9f4f7d0182ee3bc13b77bb56a062be48ddd96c19c468a1f1b83ad"
+    },
+    {
+      "path": "model.mil",
+      "bytes": 619951,
+      "sha256": "4fc3cbcca47985c4602d9c272c7e8d4798147172394b464b2eac078a861ccbde"
+    },
+    {
+      "path": "weights/weight.bin",
+      "bytes": 476826032,
+      "sha256": "b418694fe2707c674a3261e5eab36871dfebe1b01f500982d23ea8653157c345"
+    }
+  ],
+  "officialCommit": "0daa98442b928274ff50a1b5e594a2b53c94879d",
+  "checkpointSHA256": "d7daaece4350f2e3d505155d1712d22929fec06b463532e076de217996a3462d",
+  "reference": "Unmodified official FP32 CascadedGaze + LayerNormFunction, GCE GELU, nn.Upsample nearest",
+  "referenceInputs": "Identical half-rounded developed-sRGB RGB tensors",
+  "photoFixture": {
+    "source": "Pinned official NAFNet/demo/noisy.png, reused solely as a noisy-photo tensor fixture",
+    "sha256": "403034182fa320130dae0d75b92e85e0850771378e674d65455c403a4958e29c",
+    "largerShapeExtension": "Repeat original pixels without interpolation; not a SIDD benchmark score"
+  },
+  "computeRequested": "cpuAndNeuralEngine",
+  "actualANEPlacement": "NOT_MEASURED",
+  "scope": "Mac raw Core ML tensors; not a phone, SIDD score, HDR adapter or full-photo quality benchmark",
+  "ensemble": "none",
+  "strengthsApplied": false,
+  "outputClamped": false,
+  "fidelityGate": {
+    "psnrMinDB": 50,
+    "maxAbsoluteErrorExclusive": 0.02
+  },
+  "productionRawRange": [
+    -0.25,
+    1.25
+  ],
+  "cases": [
+    {
+      "case": "black",
+      "torchSeconds": 1.7023792910040356,
+      "predictionSeconds": 1.5654496669885702,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.019929878413677216,
+            "maxFinite": 0.02286970429122448,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.0199432373046875,
+            "maxFinite": 0.0228729248046875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 103.53558254406127,
+          "maxAbsoluteError": 2.3012980818748474e-05
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 103.53558254406127,
+      "maxAbsoluteError": 2.3012980818748474e-05,
+      "minPrediction": -0.0199432373046875,
+      "maxPrediction": 0.0228729248046875,
+      "meanAbsoluteChangeFromInput": 0.0033829405438154936
+    },
+    {
+      "case": "white",
+      "torchSeconds": 1.5466467080113944,
+      "predictionSeconds": 1.5195680829929188,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.9900672435760498,
+            "maxFinite": 1.0029339790344238,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.990234375,
+            "maxFinite": 1.0029296875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 81.084353980471,
+          "maxAbsoluteError": 0.0004824399948120117
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 81.084353980471,
+      "maxAbsoluteError": 0.0004824399948120117,
+      "minPrediction": 0.990234375,
+      "maxPrediction": 1.0029296875,
+      "meanAbsoluteChangeFromInput": 0.0013094121823087335
+    },
+    {
+      "case": "near-black",
+      "torchSeconds": 1.5484191669966094,
+      "predictionSeconds": 1.516593832988292,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -0.014829467982053757,
+            "maxFinite": 0.019450655207037926,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -0.01483154296875,
+            "maxFinite": 0.019439697265625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 105.99628149514356,
+          "maxAbsoluteError": 2.1688872948288918e-05
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 105.99628149514356,
+      "maxAbsoluteError": 2.1688872948288918e-05,
+      "minPrediction": -0.01483154296875,
+      "maxPrediction": 0.019439697265625,
+      "meanAbsoluteChangeFromInput": 0.0033701106440275908
+    },
+    {
+      "case": "gradient",
+      "torchSeconds": 1.503239208017476,
+      "predictionSeconds": 1.501377999986289,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.007774148136377335,
+            "maxFinite": 1.0171787738800049,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.00777435302734375,
+            "maxFinite": 1.017578125,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 80.65816894035918,
+          "maxAbsoluteError": 0.0004862546920776367
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 80.65816894035918,
+      "maxAbsoluteError": 0.0004862546920776367,
+      "minPrediction": 0.00777435302734375,
+      "maxPrediction": 1.017578125,
+      "meanAbsoluteChangeFromInput": 0.007346192374825478
+    },
+    {
+      "case": "high-frequency-fine-grain",
+      "torchSeconds": 1.5424245830217842,
+      "predictionSeconds": 1.5195082499994896,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4740326702594757,
+            "maxFinite": 0.571632444858551,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.47412109375,
+            "maxFinite": 0.57177734375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.18101526646679,
+          "maxAbsoluteError": 0.00024515390396118164
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 78.18101526646679,
+      "maxAbsoluteError": 0.00024515390396118164,
+      "minPrediction": 0.47412109375,
+      "maxPrediction": 0.57177734375,
+      "meanAbsoluteChangeFromInput": 0.019251815974712372
+    },
+    {
+      "case": "bounded-photo-noise",
+      "torchSeconds": 1.5108706250030082,
+      "predictionSeconds": 1.5168458749831188,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4731263518333435,
+            "maxFinite": 0.5536302924156189,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.47314453125,
+            "maxFinite": 0.5537109375,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.43908031407923,
+          "maxAbsoluteError": 0.0002442002296447754
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 77.43908031407923,
+      "maxAbsoluteError": 0.0002442002296447754,
+      "minPrediction": 0.47314453125,
+      "maxPrediction": 0.5537109375,
+      "meanAbsoluteChangeFromInput": 0.01949513517320156
+    },
+    {
+      "case": "fine-color-stripes",
+      "torchSeconds": 1.5469483750057407,
+      "predictionSeconds": 1.515786832984304,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4542495012283325,
+            "maxFinite": 0.5573908686637878,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.454345703125,
+            "maxFinite": 0.5576171875,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.1884709375478,
+          "maxAbsoluteError": 0.0002688169479370117
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 77.1884709375478,
+      "maxAbsoluteError": 0.0002688169479370117,
+      "minPrediction": 0.454345703125,
+      "maxPrediction": 0.5576171875,
+      "meanAbsoluteChangeFromInput": 0.03764006868004799
+    },
+    {
+      "case": "diagonal-detail",
+      "torchSeconds": 1.574669499997981,
+      "predictionSeconds": 1.508175291994121,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.43986451625823975,
+            "maxFinite": 0.5711266398429871,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.43994140625,
+            "maxFinite": 0.5712890625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 78.26418916655292,
+          "maxAbsoluteError": 0.0002454519271850586
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 78.26418916655292,
+      "maxAbsoluteError": 0.0002454519271850586,
+      "minPrediction": 0.43994140625,
+      "maxPrediction": 0.5712890625,
+      "meanAbsoluteChangeFromInput": 0.1683836579322815
+    },
+    {
+      "case": "high-frequency-color",
+      "torchSeconds": 1.5449450410087593,
+      "predictionSeconds": 1.5032651659857947,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": -107.0618667602539,
+            "maxFinite": 63.70653533935547,
+            "requiresProductionRefusal": true
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": -107.0625,
+            "maxFinite": 63.71875,
+            "requiresProductionRefusal": true
+          }
+        }
+      ],
+      "status": "REQUIRES_SAFE_REFUSAL",
+      "rawConvertedOutputRequiresRefusal": true
+    },
+    {
+      "case": "seeded-noise",
+      "torchSeconds": 1.5128153749974445,
+      "predictionSeconds": 1.517683083016891,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.4904409348964691,
+            "maxFinite": 0.7263410091400146,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.490478515625,
+            "maxFinite": 0.7265625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 77.01427392247504,
+          "maxAbsoluteError": 0.0002449154853820801
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 77.01427392247504,
+      "maxAbsoluteError": 0.0002449154853820801,
+      "minPrediction": 0.490478515625,
+      "maxPrediction": 0.7265625,
+      "meanAbsoluteChangeFromInput": 0.2581419050693512
+    },
+    {
+      "case": "official-noisy-demo",
+      "torchSeconds": 1.5699382909806445,
+      "predictionSeconds": 1.4999463340209331,
+      "orientations": [
+        {
+          "pythonBridgeDtype": "float32",
+          "quarterTurnsCCW": 0,
+          "mirrorHorizontalBeforeRotation": false,
+          "reference": {
+            "finite": true,
+            "minFinite": 0.29296958446502686,
+            "maxFinite": 0.5713213086128235,
+            "requiresProductionRefusal": false
+          },
+          "prediction": {
+            "finite": true,
+            "minFinite": 0.29296875,
+            "maxFinite": 0.5712890625,
+            "requiresProductionRefusal": false
+          },
+          "psnrDB": 79.7649239201937,
+          "maxAbsoluteError": 0.0002442002296447754
+        }
+      ],
+      "status": "PASS",
+      "psnrDB": 79.7649239201937,
+      "maxAbsoluteError": 0.0002442002296447754,
+      "minPrediction": 0.29296875,
+      "maxPrediction": 0.5712890625,
+      "meanAbsoluteChangeFromInput": 0.08026131242513657
+    }
+  ],
+  "failures": [],
+  "finiteFidelityComparisons": 10,
+  "refusalObservations": 1,
+  "warmPredictionSeconds": [
+    1.5056250840134453,
+    1.51685450001969,
+    1.5125775420165155
+  ],
+  "passed": true,
+  "parameters": 119223063,
+  "modelLoadSeconds": 0.6803528330055997,
+  "orientationOrder": [
+    {
+      "quarterTurnsCCW": 0,
+      "mirrorHorizontalBeforeRotation": false
+    }
+  ],
+  "compiledAssetUnchanged": true
+}

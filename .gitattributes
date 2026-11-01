@@ -1,0 +1,2 @@
+# Preserve the pinned upstream reference sources byte-for-byte.
+ModelConversionTools/official/** -whitespace

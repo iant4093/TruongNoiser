@@ -1,0 +1,173 @@
+name: TruongNoiser
+options:
+  bundleIdPrefix: com.iantruong
+  deploymentTarget:
+    iOS: "27.0"
+packages:
+  TruongNoiserPackage:
+    path: .
+targets:
+  TruongNoiserApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: Targets/TruongNoiserApp
+        excludes:
+          - Models
+      # Folder reference: copies the complete trained-model tree (including provenance
+      # and notices) as Models/ inside the built .app, matching the production registry's
+      # on-device search path. Do not turn these into flat per-file resources.
+      - path: Targets/TruongNoiserApp/Models
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - package: TruongNoiserPackage
+        product: DeepZoomGalleryUI
+      - package: TruongNoiserPackage
+        product: TruongNoiserCore
+      - package: TruongNoiserPackage
+        product: BackgroundJobManager
+      - target: TruongNoiserLiveActivityExtension
+        embed: true
+    entitlements:
+      path: Targets/TruongNoiserApp/TruongNoiserApp.entitlements
+      properties:
+        com.apple.developer.kernel.increased-memory-limit: true
+        com.apple.security.application-groups:
+          - group.com.iantruong.imagingsuite
+    info:
+      path: Targets/TruongNoiserApp/Info.plist
+      properties:
+        CFBundleDisplayName: TruongNoiser
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSSupportsLiveActivities: true
+        NSSupportsLiveActivitiesFrequentUpdates: true
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.iantruong.truongnoiser.continued-processing.*
+        CFBundleURLTypes:
+          - CFBundleTypeRole: Editor
+            CFBundleURLName: com.iantruong.truongnoiser.handoff
+            CFBundleURLSchemes:
+              - truongnoiser
+        LSApplicationQueriesSchemes:
+          - truongscaler
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: "TruongNoiser photo handoff"
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Owner
+            LSItemContentTypes:
+              - com.iantruong.imagingsuite.handoff.noiser
+        LSSupportsOpeningDocumentsInPlace: false
+        UTExportedTypeDeclarations:
+          - UTTypeIdentifier: com.iantruong.imagingsuite.handoff.noiser
+            UTTypeDescription: "TruongNoiser photo handoff"
+            UTTypeConformsTo:
+              - public.data
+              - public.content
+            UTTypeTagSpecification:
+              public.filename-extension:
+                - truongnoiserhandoff
+              public.mime-type: application/vnd.iantruong.noiser-handoff
+        UTImportedTypeDeclarations:
+          - UTTypeIdentifier: com.iantruong.imagingsuite.handoff.scaler
+            UTTypeDescription: "TruongScaler photo handoff"
+            UTTypeConformsTo:
+              - public.data
+              - public.content
+            UTTypeTagSpecification:
+              public.filename-extension:
+                - truongscalerhandoff
+              public.mime-type: application/vnd.iantruong.scaler-handoff
+        NSPhotoLibraryUsageDescription: "TruongNoiser requires access to your Photo Library to load full-resolution RAW, ProRAW, HEIC, and JPEG images for noise reduction."
+        NSPhotoLibraryAddUsageDescription: "TruongNoiser requires permission to save denoised images to your Photo Library."
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.iantruong.truongnoiser
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        # Keep the current system-green accent and shipped TN artwork in both build configurations.
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0"
+        SWIFT_VERSION: "6.0"
+  TruongNoiserLiveActivityExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Targets/TruongNoiserLiveActivityExtension
+    dependencies:
+      - package: TruongNoiserPackage
+        product: TruongNoiserCore
+      - package: TruongNoiserPackage
+        product: NoiserActivityUI
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+    entitlements:
+      path: Targets/TruongNoiserLiveActivityExtension/TruongNoiserLiveActivityExtension.entitlements
+      properties: {}
+    info:
+      path: Targets/TruongNoiserLiveActivityExtension/Info.plist
+      properties:
+        CFBundleDisplayName: TruongNoiserLiveActivity
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.iantruong.truongnoiser.liveactivity
+        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0"
+        SWIFT_VERSION: "6.0"
+  TruongNoiserHostTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests/TruongNoiserHostTests
+    dependencies:
+      # Resolve package symbols through TEST_HOST/BUNDLE_LOADER. Linking the automatic UI
+      # product here makes Xcode create a second dynamic copy of the app's package graph.
+      - target: TruongNoiserApp
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.iantruong.truongnoiser.hosttests
+        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0"
+        SWIFT_VERSION: "6.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/TruongNoiserApp.app/TruongNoiserApp"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        LD_RUNPATH_SEARCH_PATHS:
+          - "$(inherited)"
+          - "@executable_path/Frameworks"
+          - "@loader_path/Frameworks"
+schemes:
+  TruongNoiserApp:
+    build:
+      targets:
+        TruongNoiserApp: all
+    run:
+      config: Debug
+    profile:
+      config: Release
+    archive:
+      config: Release
+  TruongNoiserHostTests:
+    build:
+      targets:
+        TruongNoiserHostTests: [test, analyze]
+    test:
+      config: Debug
+      targets:
+        - TruongNoiserHostTests

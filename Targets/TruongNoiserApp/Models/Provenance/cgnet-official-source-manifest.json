@@ -1,0 +1,68 @@
+{
+  "repository": "https://github.com/Ascend-Research/CascadedGaze",
+  "commit": "0daa98442b928274ff50a1b5e594a2b53c94879d",
+  "retrievedAt": "2026-10-29T04:53:46.763091+00:00",
+  "files": [
+    {
+      "path": "official/CascadedGaze/README.md",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/README.md",
+      "bytes": 7574,
+      "sha256": "c41c7857de96cecded622ee54e5c8fc7006fbfd5a43eec9088f0dfa947cfb7e0"
+    },
+    {
+      "path": "official/CascadedGaze/LICENSE.txt",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/LICENSE.txt",
+      "bytes": 1085,
+      "sha256": "b62eff5d03bdbab915bbc25f673b9fb723c938ebfbc01e1c8a0e3bf82a179bda"
+    },
+    {
+      "path": "official/CascadedGaze/basicsr/models/archs/CGNet_arch.py",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/basicsr/models/archs/CGNet_arch.py",
+      "bytes": 11066,
+      "sha256": "16bea7452d215049f79c43190c1e3e823a9a6e6a5ff175933c6350cbbee3a20e"
+    },
+    {
+      "path": "official/CascadedGaze/basicsr/models/archs/arch_util.py",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/basicsr/models/archs/arch_util.py",
+      "bytes": 13862,
+      "sha256": "3b4997c1516031dd310295b3c70303ce45862b6135f2dd41d96a528b571b614f"
+    },
+    {
+      "path": "official/CascadedGaze/basicsr/models/archs/local_arch.py",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/basicsr/models/archs/local_arch.py",
+      "bytes": 4441,
+      "sha256": "20026dc40a3022884695630d9de08db67dc907793ab77541dc325b619ce993e3"
+    },
+    {
+      "path": "official/CascadedGaze/basicsr/utils/logger.py",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/basicsr/utils/logger.py",
+      "bytes": 6928,
+      "sha256": "89afed7736066c789e5b9a2e01585fc63b79219a24f123b2a9c7f45fe40503f8"
+    },
+    {
+      "path": "official/CascadedGaze/basicsr/utils/dist_util.py",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/basicsr/utils/dist_util.py",
+      "bytes": 2732,
+      "sha256": "5e54ae01cb3db1318ca6378250fbd3132eb8bb99ae8fe1c493a4135d920d8ecb"
+    },
+    {
+      "path": "official/CascadedGaze/options/test/SIDD/CascadedGaze-SIDD.yml",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/options/test/SIDD/CascadedGaze-SIDD.yml",
+      "bytes": 1034,
+      "sha256": "6d82602bb77e8fafe6f2df6ebd19646b7c06733a6bafa207265368d77c424d56"
+    },
+    {
+      "path": "official/CascadedGaze/options/train/SIDD/CascadedGaze-SIDD.yml",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/options/train/SIDD/CascadedGaze-SIDD.yml",
+      "bytes": 2127,
+      "sha256": "d03f72bd36739bb4e315770b336c9dbd8b18b8d6b0ea4af6d7aff175614fbe00"
+    },
+    {
+      "path": "official/CascadedGaze/demo-denoising.ipynb",
+      "sourceURL": "https://raw.githubusercontent.com/Ascend-Research/CascadedGaze/0daa98442b928274ff50a1b5e594a2b53c94879d/demo-denoising.ipynb",
+      "bytes": 4660,
+      "sha256": "c658c49e1e677ab1cd823a9bdfe88e7f1c0217255b8ebe44718a590c070d3a7b"
+    }
+  ],
+  "status": "source_pin_only; strict checkpoint load, conversion and fidelity NOT_RUN"
+}
