@@ -12,7 +12,7 @@ import TruongNoiserCore
 @MainActor
 final class ReadmeScreenshotCaptureTests: XCTestCase {
     /// Opt-in documentation capture of the production screens, with real required-model output.
-    /// The two CC0 photographs and their attribution live in the maintained README fixture set.
+    /// The pinned upstream noisy demo and its attribution live in the maintained README fixture set.
     /// Normal test runs never write documentation or populate the person's photo libraries.
     func testCaptureREADMEProductionScreenshots() async throws {
         guard let capturePath = ProcessInfo.processInfo.environment["TRUONGNOISER_README_SCREENSHOT_DIR"],
@@ -35,8 +35,7 @@ final class ReadmeScreenshotCaptureTests: XCTestCase {
         let fixtures = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
             .appendingPathComponent("TruongNoiserHostTests/Fixtures/README", isDirectory: true)
         let samples = [
-            (fixture: "photo_flower_lr_512x384.png", name: "Blue sow-thistle.png"),
-            (fixture: "photo_landscape_lr_512x384.png", name: "Urbino at sunset.png"),
+            (fixture: "official-noisy-demo.png", name: "Noisy text detail.png"),
         ]
         var photos: [URL] = []
         for sample in samples {
@@ -49,7 +48,7 @@ final class ReadmeScreenshotCaptureTests: XCTestCase {
         let vm = StudioViewModel(workingDirectory: directory.appendingPathComponent("work"), defaults: defaults)
         await vm.setOutputFolder(url: output)
         await vm.setLibraryFolder(url: input)
-        XCTAssertEqual(vm.daySections.flatMap(\.items).count, 2)
+        XCTAssertEqual(vm.daySections.flatMap(\.items).count, samples.count)
         XCTAssertNil(vm.errorMessage)
         let scene = try XCTUnwrap(UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first)
         let previousKeyWindow = scene.windows.first(where: \.isKeyWindow)
@@ -94,8 +93,8 @@ final class ReadmeScreenshotCaptureTests: XCTestCase {
         try capture("input-library")
 
         vm.exportFormat = .tiff16BitLZW
-        for (index, photo) in photos.enumerated() {
-            let model: BackboneModelKind = index == 0 ? .cgnet : .nafnetNormal
+        for photo in photos {
+            let model: BackboneModelKind = .cgnet
             vm.selectedModel = model
             await vm.ingestFile(at: photo)
             vm.startProcessing()
@@ -110,21 +109,21 @@ final class ReadmeScreenshotCaptureTests: XCTestCase {
             XCTAssertEqual(vm.currentStage, .readyForInspection, vm.errorMessage ?? "")
             XCTAssertTrue(vm.isProcessedPhoto)
             XCTAssertEqual(vm.completedArtifacts?.checkpoint.config.backbone, model)
-            XCTAssertEqual(vm.completedArtifacts?.checkpoint.outputWidth, 512)
-            XCTAssertEqual(vm.completedArtifacts?.checkpoint.outputHeight, 384)
+            XCTAssertEqual(vm.completedArtifacts?.checkpoint.outputWidth, 256)
+            XCTAssertEqual(vm.completedArtifacts?.checkpoint.outputHeight, 256)
             guard vm.currentStage == .readyForInspection else { throw CocoaError(.featureUnsupported) }
         }
         await vm.reloadOutputFolder()
-        XCTAssertEqual(vm.outputDaySections.flatMap(\.items).count, 2)
-        // Reopen the saved flower result to exercise the portable before/after record, rather than
+        XCTAssertEqual(vm.outputDaySections.flatMap(\.items).count, samples.count)
+        // Reopen the saved denoised result to exercise the portable before/after record, rather than
         // holding an unpersisted in-memory canvas only for a screenshot.
         let records = try await ProcessedLibraryStore().records(under: output)
-        let flowerRecord = try XCTUnwrap(records.first { $0.original.filename == samples[0].name })
-        XCTAssertEqual(flowerRecord.modelRawValue, BackboneModelKind.cgnet.rawValue)
-        let flowerURL = output.appendingPathComponent(flowerRecord.outputRelativePath)
-        let flowerResult = try XCTUnwrap(vm.outputDaySections.flatMap(\.items).first { $0.fileURL == flowerURL })
+        let denoisedRecord = try XCTUnwrap(records.first { $0.original.filename == samples[0].name })
+        XCTAssertEqual(denoisedRecord.modelRawValue, BackboneModelKind.cgnet.rawValue)
+        let denoisedURL = output.appendingPathComponent(denoisedRecord.outputRelativePath)
+        let denoisedResult = try XCTUnwrap(vm.outputDaySections.flatMap(\.items).first { $0.fileURL == denoisedURL })
         vm.selectedCollection = .output
-        await vm.openLibraryPhoto(flowerResult)
+        await vm.openLibraryPhoto(denoisedResult)
         XCTAssertEqual(vm.currentStage, .readyForInspection, vm.errorMessage ?? "")
         XCTAssertNil(vm.comparisonUnavailableReason)
         let viewer = UIHostingController(rootView: StudioWorkspaceView(viewModel: vm).preferredColorScheme(.dark))
@@ -132,6 +131,28 @@ final class ReadmeScreenshotCaptureTests: XCTestCase {
         await withCheckedContinuation { continuation in library.present(viewer, animated: false) { continuation.resume() } }
         try await settle()
         try capture("processed-viewer")
+
+        // Exercise the production comparison viewer's shared zoom transform. This is a native
+        // viewport capture of the same saved original/result pair, not a resized composite.
+        func comparisonScrollView(_ view: UIView) -> SplitZoomScrollView? {
+            if let scroll = view as? SplitZoomScrollView { return scroll }
+            return view.subviews.compactMap { comparisonScrollView($0) }.first
+        }
+        let comparison = try XCTUnwrap(comparisonScrollView(viewer.view))
+        let detailRect = CGRect(x: 64, y: 80, width: 128, height: 128)
+        comparison.zoom(to: detailRect, animated: false)
+        try await settle()
+        XCTAssertGreaterThan(comparison.zoomScale, comparison.minimumZoomScale * 1.9)
+        XCTAssertGreaterThan(comparison.contentSize.width, comparison.bounds.width * 1.9)
+        let detailZoom: [String: Any] = [
+            "requestedCanvasRect": ["x": Double(detailRect.minX), "y": Double(detailRect.minY),
+                                    "width": Double(detailRect.width), "height": Double(detailRect.height)],
+            "canvasWidth": 256, "canvasHeight": 256,
+            "zoomScale": Double(comparison.zoomScale),
+            "relativeToFit": Double(comparison.zoomScale / comparison.minimumZoomScale),
+            "comparison": "Left: unchanged noisy input; right: saved CGNet (Better) output; shared native viewer transform",
+        ]
+        try capture("detail-comparison")
         await withCheckedContinuation { continuation in library.dismiss(animated: false) { continuation.resume() } }
         vm.viewerDidDismiss()
         try await settle()
@@ -139,7 +160,7 @@ final class ReadmeScreenshotCaptureTests: XCTestCase {
 
         vm.selectedCollection = .input
         await vm.ingestFile(at: photos[0])
-        XCTAssertEqual(vm.metadata?.originalWidth, 512)
+        XCTAssertEqual(vm.metadata?.originalWidth, 256)
         vm.selectedModel = .cgnet
         let options = UIHostingController(rootView: DenoiseOptionsFormSheet(viewModel: vm, onPickFileOrFolder: {})
             .preferredColorScheme(.dark))
@@ -159,6 +180,7 @@ final class ReadmeScreenshotCaptureTests: XCTestCase {
         try capture("model-settings")
         await withCheckedContinuation { continuation in library.dismiss(animated: false) { continuation.resume() } }
 
+        XCTAssertEqual(capturedNames.count, 5)
         let attribution = try JSONSerialization.jsonObject(with: Data(contentsOf: fixtures.appendingPathComponent("fixture-provenance.json"))) as? [String: Any]
         let sourceHashes = try Dictionary(uniqueKeysWithValues: samples.map { sample in
             let data = try Data(contentsOf: fixtures.appendingPathComponent(sample.fixture))
@@ -166,10 +188,11 @@ final class ReadmeScreenshotCaptureTests: XCTestCase {
         })
         let manifest: [String: Any] = [
             "capture": "Actual production SwiftUI/UIKit screens in an iOS simulator, 402×874 points at 3×; private temporary libraries",
-            "processing": "Real StudioViewModel production initializer (.requireProductionModels), CGNet (Better) flower and NAFNet (Fast) landscape, native 1× with luminance/color strengths 80%/100%; two 512×384 inputs saved as 512×384 TIFF results; the CGNet comparison is reopened through its portable record",
+            "processing": "Real StudioViewModel production initializer (.requireProductionModels), CGNet (Better), native 1× with luminance/color strengths 80%/100%; the exact upstream 256×256 noisy demo is saved as a 256×256 TIFF result and reopened through its portable before/after record",
             "settings": "Current three-choice production form with CGNet (Better) selected for the next job and luminance/color controls",
             "qualityScope": "Screenshots illustrate the interface; they do not establish physical-phone performance or image-quality superiority",
             "screenshots": capturedNames,
+            "detailComparison": detailZoom,
             "fixtureSHA256": sourceHashes,
             "photographSources": attribution?["sources"] ?? [],
             "fixtureProvenance": "Tests/TruongNoiserHostTests/Fixtures/README/fixture-provenance.json",

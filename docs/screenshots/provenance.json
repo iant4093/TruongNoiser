@@ -1,37 +1,48 @@
 {
   "capture" : "Actual production SwiftUI\/UIKit screens in an iOS simulator, 402×874 points at 3×; private temporary libraries",
+  "detailComparison" : {
+    "canvasHeight" : 256,
+    "canvasWidth" : 256,
+    "comparison" : "Left: unchanged noisy input; right: saved CGNet (Better) output; shared native viewer transform",
+    "relativeToFit" : 2,
+    "requestedCanvasRect" : {
+      "height" : 128,
+      "width" : 128,
+      "x" : 64,
+      "y" : 80
+    },
+    "zoomScale" : 3.140625
+  },
   "fixtureProvenance" : "Tests\/TruongNoiserHostTests\/Fixtures\/README\/fixture-provenance.json",
   "fixtureSHA256" : {
-    "photo_flower_lr_512x384.png" : "c491d8dc73fa3bc22cbc566a32926c576da2406ee514bbcd5dbeffe850b775ab",
-    "photo_landscape_lr_512x384.png" : "d7a2301a4872edbc158eb510891ad57cbc514bf6755132a0d14b4b14a3a0052a"
+    "official-noisy-demo.png" : "403034182fa320130dae0d75b92e85e0850771378e674d65455c403a4958e29c"
   },
   "photographSources" : [
     {
-      "author" : "W.carter",
-      "bytes" : 4592572,
-      "file" : "common-blue-sow-thistle.jpg",
-      "license" : "CC0 1.0",
-      "licenseURL" : "https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/",
-      "sha256" : "c59bbee0feafedf0d1cf839d19ea35986a0966ca6483b36a49c97a7ab034ce3f",
-      "title" : "Common Blue-Sow-Thistle in a patch of sunlight",
-      "url" : "https:\/\/commons.wikimedia.org\/wiki\/File:Common_Blue-Sow-Thistle_in_a_patch_of_sunlight.jpg"
-    },
-    {
-      "author" : "Julian Lupyan",
-      "bytes" : 14383656,
-      "file" : "urbino-sunset.jpg",
-      "license" : "CC0 1.0",
-      "licenseURL" : "https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/",
-      "sha256" : "7cb5693ec47a37c16f6f39323e4b7ad2b313c50a2fe0901e0cf49a20f65c3079",
-      "title" : "Landscape South of Urbino, Taken from Parco della Resistenza at Late Sunset",
-      "url" : "https:\/\/commons.wikimedia.org\/wiki\/File:Landscape_South_of_Urbino,_Taken_from_Parco_della_Resistenza_at_Late_Sunset.jpg"
+      "bytes" : 170716,
+      "downloadURL" : "https:\/\/raw.githubusercontent.com\/megvii-research\/NAFNet\/2b4af71ebe098a92a75910c233a3965a3e93ede4\/demo\/noisy.png",
+      "file" : "official-noisy-demo.png",
+      "license" : "Upstream repository MIT license and bundled BasicSR Apache-2.0 notices; not a CC0 assertion",
+      "licenseURL" : "https:\/\/github.com\/megvii-research\/NAFNet\/blob\/2b4af71ebe098a92a75910c233a3965a3e93ede4\/LICENSE",
+      "note" : "Exact upstream noisy PNG, with no added noise, filtering or resizing. The screenshot output is freshly processed by the app, not copied from the upstream denoised example.",
+      "noticePath" : "ModelConversionTools\/official\/NAFNet\/LICENSE",
+      "pixelHeight" : 256,
+      "pixelWidth" : 256,
+      "repository" : "https:\/\/github.com\/megvii-research\/NAFNet",
+      "revision" : "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+      "sha256" : "403034182fa320130dae0d75b92e85e0850771378e674d65455c403a4958e29c",
+      "suppliedBy" : "NAFNet authors \/ megvii-research",
+      "title" : "Official NAFNet noisy denoising demonstration",
+      "upstreamPath" : "demo\/noisy.png",
+      "url" : "https:\/\/github.com\/megvii-research\/NAFNet\/blob\/2b4af71ebe098a92a75910c233a3965a3e93ede4\/demo\/noisy.png"
     }
   ],
-  "processing" : "Real StudioViewModel production initializer (.requireProductionModels), CGNet (Better) flower and NAFNet (Fast) landscape, native 1× with luminance\/color strengths 80%\/100%; two 512×384 inputs saved as 512×384 TIFF results; the CGNet comparison is reopened through its portable record",
+  "processing" : "Real StudioViewModel production initializer (.requireProductionModels), CGNet (Better), native 1× with luminance\/color strengths 80%\/100%; the exact upstream 256×256 noisy demo is saved as a 256×256 TIFF result and reopened through its portable before\/after record",
   "qualityScope" : "Screenshots illustrate the interface; they do not establish physical-phone performance or image-quality superiority",
   "screenshots" : [
     "input-library.png",
     "processed-viewer.png",
+    "detail-comparison.png",
     "output-library.png",
     "model-settings.png"
   ],

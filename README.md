@@ -28,7 +28,7 @@ The app bundles **three choices and four compiled variants**, with 256 and 512 i
 
 ## Screenshots
 
-Current screenshots show actual production SwiftUI/UIKit screens captured in an iOS Simulator at 1206 × 2622, using temporary libraries and CC0 photo fixtures. The viewer reopens a saved native-resolution CGNet result through its portable record; settings show CGNet (Better) and independent strength controls. Screens illustrate the interface; they do not establish physical-phone performance or image-quality superiority. Photography credits, source links and capture details are in [screenshot provenance](docs/screenshots/provenance.json).
+Five actual production SwiftUI/UIKit screens captured in an iOS Simulator at 1206 × 2622 use the pinned upstream NAFNet noisy demonstration image. The viewer reopens a freshly processed native-resolution CGNet result through its portable record; the detail view zooms the same aligned original/result pair, with noisy input on the left and denoised output on the right. Settings show CGNet (Better) and independent strength controls. Screens illustrate the interface and this example; they do not establish physical-phone performance or general image-quality superiority. Upstream credits, license notices, source hashes and capture details are in [screenshot provenance](docs/screenshots/provenance.json).
 
 <table>
   <tr>
@@ -49,6 +49,12 @@ Current screenshots show actual production SwiftUI/UIKit screens captured in an 
     <td width="50%" valign="top">
       <img src="docs/screenshots/model-settings.png" width="100%" alt="TruongNoiser processing settings with CGNet selected, luminance/color strengths and export controls">
       <p align="center"><sub><b>Processing settings</b> · choose the model, strengths and export format</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" valign="top">
+      <img src="docs/screenshots/detail-comparison.png" width="50%" alt="Zoomed native-resolution CGNet comparison with the unchanged noisy input on the left and saved denoised output on the right">
+      <p align="center"><sub><b>Noise detail</b> · zoom into the same saved before/after pair; input left, denoised right</sub></p>
     </td>
   </tr>
 </table>
